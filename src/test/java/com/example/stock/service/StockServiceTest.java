@@ -18,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class StockServiceTest {
 
     @Autowired
-    private StockService stockService;
+    private PessimisticLockStockService stockService;
 
     @Autowired
     private StockRepository stockRepository;
@@ -62,7 +62,7 @@ class StockServiceTest {
 
         Stock stock = stockRepository.findById(1L).orElseThrow();
 
-        assertThat(stock.getQuantity()).isEqualTo(0);
+        assertThat(stock.getQuantity()).isEqualTo(0L);
     }
 
 }
