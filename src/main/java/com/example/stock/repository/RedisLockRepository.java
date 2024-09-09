@@ -25,6 +25,4 @@ public class RedisLockRepository {
     private String generateKey(Long key) {
         return key.toString();
     }
-
-
 }
